@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблицы</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+        }
+        .yellow { background-color: gold; }
+        .blue { background-color: steelblue; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Таблица 1 (обычная)</h2>
+    <table>
+        <tr>
+            <td class="yellow">1x1</td> <td class="blue">1x2</td> <td class="yellow">1x3</td>
+        </tr>
+        <tr>
+            <td class="blue">2x1</td> <td class="yellow">2x2</td> <td class="blue">2x3</td>
+        </tr>
+    </table>
+
+    <h2>Таблица 2 (с заголовками)</h2>
+    <table>
+        <tr>
+            <th></th> <th>1</th> <th>2</th> <th>3</th>
+        </tr>
+        <tr>
+            <td class="yellow">1x1</td> <td class="blue">1x2</td> <td class="yellow">1x3</td>
+            <td rowspan="2">1</td>
+        </tr>
+        <tr>
+            <td class="blue">2x1</td> <td class="yellow">2x2</td> <td class="blue">2x3</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <h2>Таблица 3 (с объединёнными ячейками)</h2>
+    <table>
+        <tr>
+            <td rowspan="2" class="yellow">A</td>
+            <td class="blue">B</td>
+            <td colspan="2" class="yellow">C</td>
+        </tr>
+        <tr>
+            <td class="blue">D</td>
+            <td class="yellow">E</td>
+            <td class="blue">F</td>
+        </tr>
+    </table>
+
+    <h2>Таблица 4 (таблица умножения)</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th> <th>9</th>
+        </tr>
+        <script>
+            document.write('<tr>');
+            for (let i = 1; i <= 9; i++) {
+                document.write('<tr><th>' + i + '</th>');
+                for (let j = 1; j <= 9; j++) {
+                    document.write('<td>' + (i * j) + '</td>');
+                }
+                document.write('</tr>');
+            }
+        </script>
+    </table>
+</body>
+</html>
